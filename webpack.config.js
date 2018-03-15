@@ -24,6 +24,7 @@ const deployUrl = "";
 const projectRoot = process.cwd();
 const maximumInlineSize = 10;
 const postcssPlugins = function (loader) {
+  // safe settings based on: https://github.com/ben-eb/cssnano/issues/358#issuecomment-283696193
   return [
     postcssImports({
       resolve: (url, context) => {
@@ -116,7 +117,19 @@ const postcssPlugins = function (loader) {
   ];
 };
 
-
+// import bootstrap
+// https://github.com/angular/angular-cli/wiki/stories-include-bootstrap
+// https://github.com/AngularClass/angular-starter/issues/696
+// import less
+// https://github.com/angular/angular-cli/issues/7245
+const globalCss = [
+  // path.join(process.cwd(), "node_modules\\bootstrap\\dist\\css\\bootstrap.css"),
+  // path.join(process.cwd(), "./src/global/styles.less"),
+  path.join(process.cwd(), "src\\styles.css")
+  // path.join(process.cwd(), "./node_modules/bootstrap/dist/css/bootstrap.css"),
+  // path.join(process.cwd(), "./node_modules/font-awesome/css/font-awesome.css"),
+  // path.join(process.cwd(), "./src/components/friend-link/friend-link.component.less")
+];
 
 
 module.exports = {
@@ -145,13 +158,13 @@ module.exports = {
   },
   "entry": {
     "main": [
-      "./src\\main.ts"
+      "./src/main.ts"
     ],
     "polyfills": [
-      "./src\\polyfills.ts"
+      "./src/polyfills.ts"
     ],
     "styles": [
-      "./src\\styles.css"
+      "./src/styles.css"
     ]
   },
   "output": {
@@ -162,6 +175,15 @@ module.exports = {
   },
   "module": {
     "rules": [
+      {
+        "enforce": "pre",
+        "test": /\.js$/,
+        "loader": "source-map-loader",
+        // "loader": "eslint-loader",
+        "exclude": [
+          /(\\|\/)node_modules(\\|\/)/
+        ]
+      },
       {
         "test": /\.html$/,
         "loader": "raw-loader"
@@ -183,9 +205,7 @@ module.exports = {
         }
       },
       {
-        "exclude": [
-          path.join(process.cwd(), "src\\styles.css")
-        ],
+        "exclude": globalCss,
         "test": /\.css$/,
         "use": [
           {
@@ -202,9 +222,7 @@ module.exports = {
         ]
       },
       {
-        "exclude": [
-          path.join(process.cwd(), "src\\styles.css")
-        ],
+        "exclude": globalCss,
         "test": /\.scss$|\.sass$/,
         "use": [
           {
@@ -229,9 +247,7 @@ module.exports = {
         ]
       },
       {
-        "exclude": [
-          path.join(process.cwd(), "src\\styles.css")
-        ],
+        "exclude": globalCss,
         "test": /\.less$/,
         "use": [
           {
@@ -254,9 +270,7 @@ module.exports = {
         ]
       },
       {
-        "exclude": [
-          path.join(process.cwd(), "src\\styles.css")
-        ],
+        "exclude": globalCss,
         "test": /\.styl$/,
         "use": [
           {
@@ -280,9 +294,7 @@ module.exports = {
         ]
       },
       {
-        "include": [
-          path.join(process.cwd(), "src\\styles.css")
-        ],
+        "include": globalCss,
         "test": /\.css$/,
         "use": [
           "style-loader",
@@ -300,9 +312,7 @@ module.exports = {
         ]
       },
       {
-        "include": [
-          path.join(process.cwd(), "src\\styles.css")
-        ],
+        "include": globalCss,
         "test": /\.scss$|\.sass$/,
         "use": [
           "style-loader",
@@ -328,9 +338,7 @@ module.exports = {
         ]
       },
       {
-        "include": [
-          path.join(process.cwd(), "src\\styles.css")
-        ],
+        "include": globalCss,
         "test": /\.less$/,
         "use": [
           "style-loader",
@@ -354,9 +362,7 @@ module.exports = {
         ]
       },
       {
-        "include": [
-          path.join(process.cwd(), "src\\styles.css")
-        ],
+        "include": globalCss,
         "test": /\.styl$/,
         "use": [
           "style-loader",
