@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Link } from '../../../model/link.model';
 import './link.component.less';
 
-const links: Array<Link> = [
+const Links: Array<Link> = [
   {
     id: 1,
     name: 'Home',
@@ -28,5 +28,5 @@ const links: Array<Link> = [
 })
 
 export class LinkComponent {
-  link = links;
+  link = Links;
 }
