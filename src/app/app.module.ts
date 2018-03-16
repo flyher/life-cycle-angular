@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { LinkComponent } from '../components/shared/link/link.component';
+import { ContentComponent } from '../components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LinkComponent } from '../components/shared/link/link.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LinkComponent
+    LinkComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule
@@ -25,7 +27,8 @@ import { LinkComponent } from '../components/shared/link/link.component';
     // 引入需要在index中显示的组件,不需要的话
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ContentComponent
   ]
 })
 export class AppModule { }

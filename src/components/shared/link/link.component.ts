@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Link } from '../../../model/link.model';
-import './link.component.less';
+// import './link.component.less';
 
 const Links: Array<Link> = [
   {
@@ -23,7 +23,7 @@ const Links: Array<Link> = [
 @Component({
   selector: 'component-link',
   templateUrl: './link.compoent.html',
-  // styleUrls: ['./link.component.less'] //https://github.com/angular/angular-cli/issues/7245
+  styleUrls: ['./link.component.less'] //https://github.com/angular/angular-cli/issues/7245
   // styleUrls: ['./link.component.css']
 })
 

@@ -48,13 +48,17 @@ Press F12 to debug
 
 ### Q&A 
 
+[Expected 'styles' to be an array of strings](https://github.com/angular/angular-cli/issues/7245)
 
+[How to import component into another root component in Angular 2](https://stackoverflow.com/questions/39410417/how-to-import-component-into-another-root-component-in-angular-2)
 
 ### Tools
 
 Build By Visual Studio Code
 
-Generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3 for test ng2.
+More in [totoro](https://github.com/flyher/totoro)
+
+Generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3
 
 ### License
 
