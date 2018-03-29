@@ -52,6 +52,8 @@ Press F12 to debug
 
 [How to import component into another root component in Angular 2](https://stackoverflow.com/questions/39410417/how-to-import-component-into-another-root-component-in-angular-2)
 
+[User Input](https://angular.io/guide/user-input)
+
 ### Tools
 
 Build By Visual Studio Code
