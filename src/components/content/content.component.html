@@ -1,6 +1,6 @@
 <div class="content">
   {{content.info}}
   <div>
-    <input [(ngModel)]="newContent" (keyup.enter)="addContent()"/>
+    <input #newContent (keyup.enter)="showContent(newContent.value)"/>
   </div>
 </div>

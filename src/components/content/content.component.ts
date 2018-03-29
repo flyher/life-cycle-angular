@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, Input } from "@angular/core";
 import { Content } from "../../model/content.model";
 
 const content: Content = {
-  info: 'Press F12 to debug'
+  info: 'Press F12 to debug, input content to update'
 }
 
 @Component({
@@ -36,7 +36,7 @@ export class ContentComponent implements OnInit, OnDestroy {
     console.log(message);
   }
 
-  addContent(): void {
-    this.content.info = this.newContent.trim();
+  showContent(content): void {
+    this.content.info = content.trim();
   }
 }
